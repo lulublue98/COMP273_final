@@ -6,20 +6,23 @@ Ivan, March 11:
   We have to use Kraft's ineq. to find codes that fit and can be distinguished.
   As such, here are the proposed codes:
   
-  BEQ : 10 [R1] [R2] [A]
+  BEQ : 10 [R1] [R2] [A] #4 variations of R
   
-  BNQ : 11 [R1] [R2] [A]
+  BNQ : 11 [R1] [R2] [A] #4 variations of R
   
-  LD  : 010 [R] [A]
+  LD  : 010 [R] [A] #2 variations of R
   
-  STR : 011 [R] [A]
+  STR : 011 [R] [A] #2 variations of R
   
-  ADD : 0010 [R1] [R2]
+  ADD : 0010 [R1] [R2] #4 variations of R
   
-  SUB : 0011 [R1] [R2]
+  SUB : 0011 [R1] [R2] #4 variations of R
   
-  PRT : 00010 [R]
+  PRT : 00010 [R] #2 variations of R
   
-  INP : 00011 [R]
+  INP : 00011 [R] #2 variations of R
   
   STOP: 00000000
+
+  -------------------
+  Sum: 25, 12 of which require to fit 4-bit address -> 4-bit OP-code
