@@ -124,6 +124,7 @@ end TCL_Generic;&#13;
       <a name="labelloc" val="east"/>
     </tool>
     <tool lib="1" name="NOT Gate">
+      <a name="facing" val="south"/>
       <a name="size" val="20"/>
     </tool>
     <tool lib="1" name="AND Gate"/>
@@ -142,6 +143,11 @@ end TCL_Generic;&#13;
     <wire from="(100,50)" to="(120,50)"/>
     <wire from="(100,80)" to="(120,80)"/>
     <wire from="(100,110)" to="(120,110)"/>
+    <wire from="(230,150)" to="(280,150)"/>
+    <wire from="(230,130)" to="(280,130)"/>
+    <wire from="(230,210)" to="(280,210)"/>
+    <wire from="(230,230)" to="(280,230)"/>
+    <wire from="(230,190)" to="(280,190)"/>
     <wire from="(70,40)" to="(120,40)"/>
     <wire from="(70,70)" to="(120,70)"/>
     <wire from="(70,100)" to="(120,100)"/>
@@ -153,37 +159,31 @@ end TCL_Generic;&#13;
     <wire from="(40,60)" to="(40,80)"/>
     <wire from="(40,90)" to="(40,110)"/>
     <wire from="(70,120)" to="(70,140)"/>
-    <comp loc="(230,140)" name="Button_Handler"/>
-    <comp lib="5" loc="(100,80)" name="Button">
-      <a name="facing" val="south"/>
-    </comp>
-    <comp lib="5" loc="(740,50)" name="7-Segment Display"/>
-    <comp lib="5" loc="(70,50)" name="Button">
-      <a name="facing" val="south"/>
-    </comp>
-    <comp lib="5" loc="(70,80)" name="Button">
-      <a name="facing" val="south"/>
-    </comp>
-    <comp lib="5" loc="(70,140)" name="Button">
-      <a name="facing" val="south"/>
-    </comp>
-    <comp loc="(140,380)" name="RAM_16x8">
-      <a name="facing" val="west"/>
-    </comp>
-    <comp lib="5" loc="(790,50)" name="7-Segment Display"/>
-    <comp lib="5" loc="(100,110)" name="Button">
+    <comp lib="5" loc="(70,110)" name="Button">
       <a name="facing" val="south"/>
     </comp>
     <comp lib="5" loc="(40,110)" name="Button">
       <a name="facing" val="south"/>
     </comp>
+    <comp lib="5" loc="(450,40)" name="7-Segment Display"/>
+    <comp loc="(230,230)" name="RAM_16x8"/>
+    <comp lib="5" loc="(410,40)" name="7-Segment Display"/>
+    <comp lib="5" loc="(70,80)" name="Button">
+      <a name="facing" val="south"/>
+    </comp>
     <comp lib="5" loc="(40,50)" name="Button">
       <a name="facing" val="south"/>
     </comp>
-    <comp lib="5" loc="(70,110)" name="Button">
+    <comp loc="(330,210)" name="System_Bus"/>
+    <comp lib="5" loc="(40,80)" name="Button">
       <a name="facing" val="south"/>
     </comp>
-    <comp lib="5" loc="(840,50)" name="7-Segment Display"/>
+    <comp lib="5" loc="(70,140)" name="Button">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="5" loc="(100,50)" name="Button">
+      <a name="facing" val="south"/>
+    </comp>
     <comp lib="0" loc="(140,130)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="10"/>
@@ -200,12 +200,17 @@ end TCL_Generic;&#13;
       <a name="bit8" val="7"/>
       <a name="bit9" val="8"/>
     </comp>
-    <comp lib="5" loc="(100,50)" name="Button">
+    <comp lib="5" loc="(370,40)" name="7-Segment Display"/>
+    <comp lib="5" loc="(100,110)" name="Button">
       <a name="facing" val="south"/>
     </comp>
-    <comp lib="5" loc="(40,80)" name="Button">
+    <comp lib="5" loc="(70,50)" name="Button">
       <a name="facing" val="south"/>
     </comp>
+    <comp lib="5" loc="(100,80)" name="Button">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp loc="(230,130)" name="Button_Handler"/>
   </circuit>
   <circuit name="Button_Handler">
     <a name="circuit" val="Button_Handler"/>
@@ -215,17 +220,16 @@ end TCL_Generic;&#13;
     <a name="circuitnamedbox" val="true"/>
     <a name="circuitvhdlpath" val=""/>
     <appear>
-      <rect height="4" stroke="none" width="10" x="130" y="58"/>
-      <rect height="4" stroke="none" width="10" x="50" y="68"/>
-      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="65" y="74">I</text>
-      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="109" y="65">OE</text>
+      <rect height="4" stroke="none" width="10" x="130" y="98"/>
+      <rect height="4" stroke="none" width="10" x="50" y="78"/>
+      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="65" y="84">I</text>
       <rect height="4" stroke="none" width="10" x="130" y="78"/>
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="end" x="125" y="84">O</text>
       <rect height="20" stroke="none" width="70" x="60" y="90"/>
       <circ-port height="10" pin="590,330" width="10" x="135" y="75"/>
-      <circ-port height="8" pin="570,200" width="8" x="136" y="56"/>
-      <circ-port height="8" pin="110,80" width="8" x="46" y="66"/>
-      <rect fill="none" height="60" stroke="#000000" stroke-width="2" width="70" x="60" y="50"/>
+      <circ-port height="8" pin="110,80" width="8" x="46" y="76"/>
+      <circ-port height="8" pin="570,200" width="8" x="136" y="96"/>
+      <rect fill="none" height="40" stroke="#000000" stroke-width="2" width="70" x="60" y="70"/>
       <text fill="#ffffff" font-family="Dialog" font-size="12" font-weight="bold" text-anchor="middle" x="95" y="105">Input Buffer</text>
       <circ-anchor facing="east" height="6" width="6" x="137" y="77"/>
     </appear>
@@ -299,6 +303,17 @@ end TCL_Generic;&#13;
     <wire from="(580,330)" to="(590,330)"/>
     <wire from="(220,130)" to="(220,190)"/>
     <wire from="(210,240)" to="(210,300)"/>
+    <comp loc="(530,330)" name="Byte_Reg">
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="1" loc="(580,330)" name="Controlled Buffer">
+      <a name="width" val="8"/>
+      <a name="control" val="left"/>
+    </comp>
+    <comp lib="1" loc="(310,240)" name="OR Gate">
+      <a name="facing" val="south"/>
+      <a name="inputs" val="5"/>
+    </comp>
     <comp lib="0" loc="(590,330)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -307,13 +322,18 @@ end TCL_Generic;&#13;
       <a name="labelloc" val="east"/>
       <a name="radix" val="16"/>
     </comp>
-    <comp lib="1" loc="(580,330)" name="Controlled Buffer">
-      <a name="width" val="8"/>
-      <a name="control" val="left"/>
-    </comp>
     <comp lib="0" loc="(110,80)" name="Pin">
       <a name="width" val="10"/>
       <a name="label" val="I"/>
+    </comp>
+    <comp lib="1" loc="(260,240)" name="OR Gate">
+      <a name="facing" val="south"/>
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="0" loc="(570,200)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="CS"/>
+      <a name="labelloc" val="north"/>
     </comp>
     <comp lib="0" loc="(530,310)" name="Splitter">
       <a name="incoming" val="8"/>
@@ -325,13 +345,26 @@ end TCL_Generic;&#13;
       <a name="bit6" val="1"/>
       <a name="bit7" val="1"/>
     </comp>
-    <comp lib="0" loc="(570,200)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="label" val="CS"/>
-      <a name="labelloc" val="north"/>
+    <comp lib="1" loc="(470,240)" name="Controlled Buffer">
+      <a name="control" val="left"/>
     </comp>
-    <comp loc="(530,330)" name="Byte_Reg">
-      <a name="labelloc" val="south"/>
+    <comp lib="1" loc="(170,220)" name="OR Gate">
+      <a name="facing" val="south"/>
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="0" loc="(430,290)" name="Power"/>
+    <comp lib="1" loc="(210,240)" name="OR Gate">
+      <a name="facing" val="south"/>
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="0" loc="(420,330)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="5"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="right"/>
+      <a name="bit5" val="4"/>
+      <a name="bit6" val="4"/>
+      <a name="bit7" val="4"/>
     </comp>
     <comp lib="0" loc="(110,80)" name="Splitter">
       <a name="fanout" val="10"/>
@@ -348,42 +381,13 @@ end TCL_Generic;&#13;
       <a name="bit8" val="7"/>
       <a name="bit9" val="8"/>
     </comp>
-    <comp lib="1" loc="(310,240)" name="OR Gate">
-      <a name="facing" val="south"/>
+    <comp lib="1" loc="(350,220)" name="OR Gate">
+      <a name="facing" val="north"/>
       <a name="inputs" val="5"/>
-    </comp>
-    <comp lib="0" loc="(430,290)" name="Power"/>
-    <comp lib="1" loc="(170,220)" name="OR Gate">
-      <a name="facing" val="south"/>
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="1" loc="(470,240)" name="Controlled Buffer">
-      <a name="control" val="left"/>
-    </comp>
-    <comp lib="1" loc="(210,240)" name="OR Gate">
-      <a name="facing" val="south"/>
-      <a name="inputs" val="4"/>
     </comp>
     <comp lib="1" loc="(530,220)" name="NOT Gate">
       <a name="facing" val="west"/>
       <a name="size" val="20"/>
-    </comp>
-    <comp lib="0" loc="(420,330)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="5"/>
-      <a name="incoming" val="8"/>
-      <a name="appear" val="right"/>
-      <a name="bit5" val="4"/>
-      <a name="bit6" val="4"/>
-      <a name="bit7" val="4"/>
-    </comp>
-    <comp lib="1" loc="(260,240)" name="OR Gate">
-      <a name="facing" val="south"/>
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(350,220)" name="OR Gate">
-      <a name="facing" val="north"/>
-      <a name="inputs" val="5"/>
     </comp>
   </circuit>
   <circuit name="Display_Handler">
@@ -394,6 +398,148 @@ end TCL_Generic;&#13;
     <a name="circuitnamedbox" val="true"/>
     <a name="circuitvhdlpath" val=""/>
   </circuit>
+  <circuit name="System_Bus">
+    <a name="circuit" val="System_Bus"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="circuitnamedbox" val="true"/>
+    <a name="circuitvhdlpath" val=""/>
+    <appear>
+      <rect fill="#ffff87" height="210" stroke="#b8b8b8" stroke-width="2" width="41" x="339" y="120"/>
+      <circ-port height="10" pin="570,160" width="10" x="385" y="135"/>
+      <circ-port height="10" pin="370,160" width="10" x="325" y="235"/>
+      <circ-port height="10" pin="170,160" width="10" x="385" y="315"/>
+      <circ-port height="10" pin="170,90" width="10" x="385" y="295"/>
+      <circ-port height="8" pin="80,230" width="8" x="386" y="276"/>
+      <circ-port height="8" pin="470,160" width="8" x="326" y="136"/>
+      <circ-port height="8" pin="280,160" width="8" x="326" y="236"/>
+      <circ-port height="8" pin="80,160" width="8" x="386" y="316"/>
+      <circ-port height="10" pin="370,90" width="10" x="325" y="215"/>
+      <circ-port height="8" pin="80,90" width="8" x="386" y="296"/>
+      <circ-port height="10" pin="370,230" width="10" x="325" y="195"/>
+      <circ-port height="10" pin="470,230" width="10" x="325" y="155"/>
+      <circ-port height="10" pin="570,230" width="10" x="385" y="155"/>
+      <polyline fill="none" points="339,255 379,255" stroke="#b8b8b8" stroke-width="2"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="372" y="324">D</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="372" y="305">A</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="372" y="285">C</text>
+      <polyline fill="none" points="389,320 379,320" stroke="#ffff87" stroke-width="3"/>
+      <polyline fill="none" points="389,300 379,300" stroke="#ffff87" stroke-width="3"/>
+      <polyline fill="none" points="389,280 379,280" stroke="#ffff87" stroke-width="3"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="360" y="268">CPU</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="347" y="244">D</text>
+      <polyline fill="none" points="339,240 331,240" stroke="#ffff87" stroke-width="3"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="347" y="224">A</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="347" y="204">M</text>
+      <polyline fill="none" points="339,220 331,220" stroke="#ffff87" stroke-width="3"/>
+      <polyline fill="none" points="339,200 331,200" stroke="#ffff87" stroke-width="3"/>
+      <polyline fill="none" points="340,175 380,175" stroke="#b8b8b8" stroke-width="2"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="360" y="188">RAM</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="361" y="144">I/O</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="360" y="164">E</text>
+      <polyline fill="none" points="389,160 379,160" stroke="#ffff87" stroke-width="3"/>
+      <polyline fill="none" points="389,140 379,140" stroke="#ffff87" stroke-width="3"/>
+      <polyline fill="none" points="341,140 331,140" stroke="#ffff87" stroke-width="3"/>
+      <polyline fill="none" points="341,160 331,160" stroke="#ffff87" stroke-width="3"/>
+      <circ-anchor facing="east" height="6" width="6" x="377" y="217"/>
+    </appear>
+    <comp lib="0" loc="(470,160)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="Buttons"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(280,160)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="RAM_D_I"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="8" loc="(724,155)" name="Text">
+      <a name="text" val="Data bus: 8 bits"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="0" loc="(370,90)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="RAM_A"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(80,230)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="3"/>
+      <a name="label" val="CPU_CTRL"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(170,90)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="CPU_A_O"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(80,90)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="label" val="CPU_A_I"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(80,160)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="CPU_D_I"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="8" loc="(724,226)" name="Text">
+      <a name="text" val="Control Bus: Set size as required"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="0" loc="(370,230)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="label" val="RAM_M"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(170,160)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="CPU_D_O"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(570,160)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="Display"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(470,230)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Buttons_E"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(570,230)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Display_E"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(370,160)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="RAM_D_O"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="8" loc="(723,90)" name="Text">
+      <a name="text" val="Address bus: 4 bits"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+  </circuit>
   <circuit name="RAM_16x8">
     <a name="circuit" val="RAM_16x8"/>
     <a name="clabel" val=""/>
@@ -402,27 +548,27 @@ end TCL_Generic;&#13;
     <a name="circuitnamedbox" val="true"/>
     <a name="circuitvhdlpath" val=""/>
     <appear>
-      <rect fill="#3a6629" height="120" stroke="#000000" stroke-width="2" width="80" x="60" y="50"/>
-      <rect height="3" stroke="none" width="10" x="50" y="59"/>
-      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="65" y="64">Clock</text>
-      <rect height="4" stroke="none" width="10" x="50" y="78"/>
-      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="65" y="84">Address</text>
-      <rect height="3" stroke="none" width="10" x="50" y="99"/>
-      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="65" y="104">Mode</text>
-      <rect height="4" stroke="none" width="10" x="50" y="118"/>
-      <rect height="4" stroke="none" width="10" x="50" y="138"/>
-      <circ-port height="8" pin="170,590" width="8" x="46" y="116"/>
-      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="end" x="114" y="142">Data_out</text>
-      <circ-port height="8" pin="740,250" width="8" x="46" y="96"/>
-      <circ-port height="10" pin="480,590" width="10" x="45" y="135"/>
-      <circ-port height="8" pin="80,20" width="8" x="46" y="56"/>
+      <rect fill="#3a6629" height="81" stroke="#000000" stroke-width="2" width="80" x="60" y="89"/>
+      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="128" y="125">A</text>
+      <rect height="3" stroke="none" width="10" x="140" y="99"/>
+      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="127" y="105">M</text>
+      <rect height="4" stroke="none" width="10" x="141" y="118"/>
+      <rect height="4" stroke="none" width="10" x="140" y="138"/>
+      <circ-port height="8" pin="740,250" width="8" x="146" y="96"/>
+      <circ-port height="8" pin="80,20" width="8" x="46" y="156"/>
+      <circ-port height="10" pin="480,630" width="10" x="145" y="135"/>
+      <circ-port height="8" pin="150,630" width="8" x="146" y="136"/>
       <rect height="20" stroke="none" width="80" x="60" y="150"/>
-      <text fill="#ffffff" font-family="Dialog" font-size="14" font-weight="bold" text-anchor="middle" x="100" y="164">RAM_16x8</text>
-      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="65" y="124">Data_in</text>
-      <circ-port height="8" pin="820,360" width="8" x="46" y="76"/>
-      <circ-anchor facing="west" height="6" width="6" x="47" y="137"/>
+      <text fill="#ffffff" font-family="Dialog" font-size="14" font-weight="bold" text-anchor="middle" x="99" y="165">16x8b RAM</text>
+      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="127" y="145">D</text>
+      <rect height="4" stroke="none" width="10" x="140" y="158"/>
+      <rect height="4" stroke="none" width="10" x="50" y="158"/>
+      <circ-port height="8" pin="890,540" width="8" x="146" y="156"/>
+      <circ-port height="8" pin="820,360" width="8" x="146" y="116"/>
+      <circ-anchor facing="east" height="6" width="6" x="147" y="137"/>
     </appear>
     <wire from="(130,30)" to="(250,30)"/>
+    <wire from="(150,630)" to="(200,630)"/>
     <wire from="(310,530)" to="(430,530)"/>
     <wire from="(370,30)" to="(490,30)"/>
     <wire from="(340,180)" to="(340,200)"/>
@@ -439,6 +585,7 @@ end TCL_Generic;&#13;
     <wire from="(130,320)" to="(130,440)"/>
     <wire from="(130,80)" to="(130,200)"/>
     <wire from="(170,200)" to="(170,320)"/>
+    <wire from="(710,320)" to="(710,560)"/>
     <wire from="(250,200)" to="(250,320)"/>
     <wire from="(290,80)" to="(290,200)"/>
     <wire from="(290,320)" to="(290,440)"/>
@@ -446,27 +593,27 @@ end TCL_Generic;&#13;
     <wire from="(370,320)" to="(370,440)"/>
     <wire from="(410,200)" to="(410,320)"/>
     <wire from="(490,200)" to="(490,320)"/>
-    <wire from="(440,520)" to="(440,590)"/>
-    <wire from="(850,500)" to="(850,510)"/>
+    <wire from="(720,300)" to="(720,480)"/>
     <wire from="(620,270)" to="(670,270)"/>
+    <wire from="(850,500)" to="(850,510)"/>
     <wire from="(460,190)" to="(460,200)"/>
     <wire from="(460,430)" to="(460,440)"/>
     <wire from="(720,480)" to="(720,550)"/>
     <wire from="(100,40)" to="(660,40)"/>
-    <wire from="(460,540)" to="(460,620)"/>
     <wire from="(840,490)" to="(840,510)"/>
+    <wire from="(440,520)" to="(440,610)"/>
     <wire from="(600,250)" to="(600,290)"/>
     <wire from="(590,240)" to="(590,280)"/>
     <wire from="(610,260)" to="(610,300)"/>
     <wire from="(620,270)" to="(620,310)"/>
+    <wire from="(230,620)" to="(260,620)"/>
     <wire from="(650,170)" to="(670,170)"/>
-    <wire from="(380,550)" to="(720,550)"/>
+    <wire from="(170,570)" to="(190,570)"/>
     <wire from="(190,480)" to="(190,530)"/>
     <wire from="(630,70)" to="(630,190)"/>
     <wire from="(430,480)" to="(430,530)"/>
     <wire from="(530,20)" to="(530,80)"/>
     <wire from="(290,20)" to="(290,80)"/>
-    <wire from="(190,590)" to="(260,590)"/>
     <wire from="(80,240)" to="(80,360)"/>
     <wire from="(100,160)" to="(620,160)"/>
     <wire from="(200,120)" to="(200,240)"/>
@@ -478,21 +625,22 @@ end TCL_Generic;&#13;
     <wire from="(820,360)" to="(820,370)"/>
     <wire from="(850,390)" to="(850,400)"/>
     <wire from="(200,520)" to="(320,520)"/>
+    <wire from="(660,450)" to="(700,450)"/>
     <wire from="(840,460)" to="(840,480)"/>
     <wire from="(690,320)" to="(690,530)"/>
     <wire from="(920,460)" to="(920,480)"/>
     <wire from="(1000,460)" to="(1000,480)"/>
-    <wire from="(760,460)" to="(760,480)"/>
     <wire from="(220,410)" to="(640,410)"/>
+    <wire from="(760,460)" to="(760,480)"/>
     <wire from="(620,160)" to="(620,200)"/>
     <wire from="(650,300)" to="(670,300)"/>
     <wire from="(460,310)" to="(620,310)"/>
-    <wire from="(350,550)" to="(380,550)"/>
     <wire from="(100,280)" to="(100,320)"/>
     <wire from="(100,40)" to="(100,80)"/>
-    <wire from="(720,320)" to="(720,480)"/>
+    <wire from="(190,530)" to="(190,570)"/>
     <wire from="(550,360)" to="(550,480)"/>
     <wire from="(550,120)" to="(550,240)"/>
+    <wire from="(380,680)" to="(390,680)"/>
     <wire from="(630,280)" to="(630,400)"/>
     <wire from="(640,290)" to="(640,410)"/>
     <wire from="(650,300)" to="(650,420)"/>
@@ -503,57 +651,67 @@ end TCL_Generic;&#13;
     <wire from="(840,490)" to="(910,490)"/>
     <wire from="(590,230)" to="(670,230)"/>
     <wire from="(190,240)" to="(190,360)"/>
+    <wire from="(880,540)" to="(890,540)"/>
     <wire from="(760,480)" to="(840,480)"/>
-    <wire from="(840,480)" to="(920,480)"/>
     <wire from="(310,360)" to="(310,480)"/>
     <wire from="(310,120)" to="(310,240)"/>
     <wire from="(660,160)" to="(670,160)"/>
-    <wire from="(920,480)" to="(1000,480)"/>
+    <wire from="(840,480)" to="(920,480)"/>
+    <wire from="(720,300)" to="(730,300)"/>
     <wire from="(430,240)" to="(430,360)"/>
-    <wire from="(190,530)" to="(190,590)"/>
+    <wire from="(920,480)" to="(1000,480)"/>
     <wire from="(740,250)" to="(740,260)"/>
     <wire from="(220,290)" to="(600,290)"/>
     <wire from="(290,20)" to="(410,20)"/>
-    <wire from="(310,540)" to="(310,550)"/>
     <wire from="(220,50)" to="(650,50)"/>
-    <wire from="(720,480)" to="(760,480)"/>
     <wire from="(220,290)" to="(220,320)"/>
     <wire from="(220,50)" to="(220,80)"/>
-    <wire from="(700,320)" to="(720,320)"/>
-    <wire from="(170,590)" to="(190,590)"/>
-    <wire from="(310,540)" to="(460,540)"/>
+    <wire from="(310,540)" to="(310,580)"/>
+    <wire from="(830,260)" to="(830,320)"/>
     <wire from="(660,40)" to="(660,160)"/>
     <wire from="(600,220)" to="(670,220)"/>
+    <wire from="(670,500)" to="(670,560)"/>
     <wire from="(220,170)" to="(610,170)"/>
+    <wire from="(740,490)" to="(740,540)"/>
+    <wire from="(390,620)" to="(390,680)"/>
+    <wire from="(740,310)" to="(740,490)"/>
+    <wire from="(430,630)" to="(480,630)"/>
+    <wire from="(700,320)" to="(700,450)"/>
     <wire from="(1070,420)" to="(1070,510)"/>
     <wire from="(190,530)" to="(310,530)"/>
-    <wire from="(910,420)" to="(910,490)"/>
     <wire from="(250,30)" to="(370,30)"/>
+    <wire from="(910,420)" to="(910,490)"/>
+    <wire from="(410,550)" to="(720,550)"/>
     <wire from="(430,530)" to="(550,530)"/>
     <wire from="(340,60)" to="(340,80)"/>
     <wire from="(340,300)" to="(340,320)"/>
     <wire from="(630,280)" to="(670,280)"/>
+    <wire from="(670,560)" to="(710,560)"/>
     <wire from="(830,420)" to="(830,510)"/>
     <wire from="(920,400)" to="(920,420)"/>
+    <wire from="(350,550)" to="(350,580)"/>
     <wire from="(990,420)" to="(990,500)"/>
     <wire from="(610,170)" to="(610,210)"/>
     <wire from="(1060,420)" to="(1070,420)"/>
-    <wire from="(720,300)" to="(750,300)"/>
     <wire from="(200,480)" to="(200,520)"/>
+    <wire from="(650,540)" to="(740,540)"/>
+    <wire from="(260,620)" to="(260,660)"/>
+    <wire from="(210,560)" to="(420,560)"/>
     <wire from="(440,480)" to="(440,520)"/>
     <wire from="(530,200)" to="(530,320)"/>
     <wire from="(980,420)" to="(990,420)"/>
     <wire from="(850,500)" to="(990,500)"/>
     <wire from="(130,200)" to="(130,320)"/>
-    <wire from="(820,420)" to="(830,420)"/>
     <wire from="(170,320)" to="(170,440)"/>
     <wire from="(170,80)" to="(170,200)"/>
-    <wire from="(900,420)" to="(910,420)"/>
+    <wire from="(820,420)" to="(830,420)"/>
     <wire from="(250,320)" to="(250,440)"/>
     <wire from="(250,80)" to="(250,200)"/>
+    <wire from="(900,420)" to="(910,420)"/>
     <wire from="(290,200)" to="(290,320)"/>
-    <wire from="(740,260)" to="(750,260)"/>
     <wire from="(370,200)" to="(370,320)"/>
+    <wire from="(720,480)" to="(730,480)"/>
+    <wire from="(740,260)" to="(750,260)"/>
     <wire from="(410,80)" to="(410,200)"/>
     <wire from="(410,320)" to="(410,440)"/>
     <wire from="(490,320)" to="(490,440)"/>
@@ -564,9 +722,10 @@ end TCL_Generic;&#13;
     <wire from="(460,310)" to="(460,320)"/>
     <wire from="(610,210)" to="(670,210)"/>
     <wire from="(340,60)" to="(640,60)"/>
+    <wire from="(650,500)" to="(650,540)"/>
     <wire from="(80,20)" to="(170,20)"/>
+    <wire from="(350,550)" to="(370,550)"/>
     <wire from="(810,30)" to="(810,260)"/>
-    <wire from="(380,660)" to="(400,660)"/>
     <wire from="(650,50)" to="(650,170)"/>
     <wire from="(310,480)" to="(310,530)"/>
     <wire from="(80,120)" to="(80,240)"/>
@@ -578,25 +737,30 @@ end TCL_Generic;&#13;
     <wire from="(320,120)" to="(320,240)"/>
     <wire from="(660,310)" to="(670,310)"/>
     <wire from="(320,360)" to="(320,480)"/>
+    <wire from="(750,480)" to="(760,480)"/>
     <wire from="(440,240)" to="(440,360)"/>
     <wire from="(170,20)" to="(170,80)"/>
+    <wire from="(740,540)" to="(860,540)"/>
     <wire from="(620,200)" to="(670,200)"/>
     <wire from="(80,520)" to="(200,520)"/>
     <wire from="(320,520)" to="(440,520)"/>
     <wire from="(610,260)" to="(670,260)"/>
     <wire from="(340,420)" to="(650,420)"/>
     <wire from="(720,20)" to="(720,300)"/>
-    <wire from="(440,590)" to="(480,590)"/>
-    <wire from="(720,300)" to="(720,320)"/>
+    <wire from="(420,560)" to="(420,580)"/>
+    <wire from="(810,260)" to="(830,260)"/>
     <wire from="(600,180)" to="(600,220)"/>
     <wire from="(860,510)" to="(1070,510)"/>
-    <wire from="(380,550)" to="(380,660)"/>
     <wire from="(100,400)" to="(100,440)"/>
     <wire from="(100,160)" to="(100,200)"/>
+    <wire from="(370,620)" to="(390,620)"/>
+    <wire from="(190,570)" to="(190,610)"/>
     <wire from="(100,400)" to="(630,400)"/>
     <wire from="(550,240)" to="(550,360)"/>
+    <wire from="(430,610)" to="(440,610)"/>
     <wire from="(130,30)" to="(130,80)"/>
     <wire from="(690,530)" to="(820,530)"/>
+    <wire from="(190,610)" to="(200,610)"/>
     <wire from="(340,300)" to="(610,300)"/>
     <wire from="(370,30)" to="(370,80)"/>
     <wire from="(190,120)" to="(190,240)"/>
@@ -604,39 +768,64 @@ end TCL_Generic;&#13;
     <wire from="(310,240)" to="(310,360)"/>
     <wire from="(430,120)" to="(430,240)"/>
     <wire from="(430,360)" to="(430,480)"/>
+    <wire from="(420,560)" to="(670,560)"/>
+    <wire from="(660,450)" to="(660,460)"/>
+    <wire from="(710,320)" to="(830,320)"/>
     <wire from="(170,20)" to="(290,20)"/>
     <wire from="(410,20)" to="(530,20)"/>
     <wire from="(460,70)" to="(630,70)"/>
-    <wire from="(1000,390)" to="(1000,420)"/>
     <wire from="(630,190)" to="(670,190)"/>
+    <wire from="(1000,390)" to="(1000,420)"/>
     <wire from="(840,390)" to="(840,420)"/>
     <wire from="(760,390)" to="(760,420)"/>
     <wire from="(100,280)" to="(590,280)"/>
     <wire from="(220,410)" to="(220,440)"/>
     <wire from="(220,170)" to="(220,200)"/>
+    <wire from="(310,540)" to="(650,540)"/>
     <wire from="(640,290)" to="(670,290)"/>
+    <wire from="(210,560)" to="(210,600)"/>
     <wire from="(390,620)" to="(400,620)"/>
     <wire from="(640,60)" to="(640,180)"/>
     <wire from="(590,240)" to="(670,240)"/>
     <wire from="(460,190)" to="(590,190)"/>
-    <wire from="(370,590)" to="(440,590)"/>
-    <comp lib="4" loc="(770,410)" name="D Flip-Flop"/>
-    <comp loc="(370,590)" name="Byte_Reg">
+    <comp lib="1" loc="(390,550)" name="NOT Gate">
+      <a name="facing" val="west"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="0" loc="(820,370)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp loc="(370,620)" name="Byte_Reg">
       <a name="label" val="D"/>
       <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="0" loc="(170,590)" name="Pin">
-      <a name="width" val="8"/>
-      <a name="label" val="Data_in"/>
-    </comp>
-    <comp loc="(550,360)" name="Byte_Reg">
-      <a name="label" val="R_11"/>
-    </comp>
-    <comp lib="0" loc="(80,20)" name="Pin">
-      <a name="label" val="CLK"/>
-    </comp>
     <comp loc="(190,240)" name="Byte_Reg">
       <a name="label" val="R_4"/>
+    </comp>
+    <comp loc="(190,480)" name="Byte_Reg">
+      <a name="label" val="R_12"/>
+    </comp>
+    <comp loc="(430,360)" name="Byte_Reg">
+      <a name="label" val="R_10"/>
+    </comp>
+    <comp lib="0" loc="(260,660)" name="Probe"/>
+    <comp loc="(550,120)" name="Byte_Reg">
+      <a name="label" val="R_3"/>
+    </comp>
+    <comp loc="(190,120)" name="Byte_Reg">
+      <a name="label" val="R_0"/>
+    </comp>
+    <comp lib="8" loc="(932,585)" name="Text"/>
+    <comp lib="2" loc="(230,620)" name="Multiplexer">
+      <a name="selloc" val="tr"/>
+      <a name="width" val="8"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="1" loc="(750,480)" name="Controlled Buffer"/>
+    <comp loc="(310,480)" name="Byte_Reg">
+      <a name="label" val="R_13"/>
     </comp>
     <comp lib="0" loc="(820,530)" name="Splitter">
       <a name="facing" val="north"/>
@@ -644,68 +833,92 @@ end TCL_Generic;&#13;
       <a name="incoming" val="4"/>
       <a name="appear" val="right"/>
     </comp>
-    <comp loc="(430,120)" name="Byte_Reg">
-      <a name="label" val="R_2"/>
+    <comp lib="0" loc="(890,540)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="label" val="CPU_CTRL"/>
+      <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="4" loc="(930,410)" name="D Flip-Flop"/>
-    <comp loc="(190,120)" name="Byte_Reg">
-      <a name="label" val="R_0"/>
+    <comp lib="0" loc="(740,250)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="Mode"/>
+      <a name="labelloc" val="north"/>
     </comp>
-    <comp loc="(190,480)" name="Byte_Reg">
-      <a name="label" val="R_12"/>
+    <comp lib="1" loc="(370,550)" name="NOT Gate">
+      <a name="facing" val="west"/>
+      <a name="size" val="20"/>
     </comp>
-    <comp lib="4" loc="(760,250)" name="D Flip-Flop"/>
-    <comp loc="(310,240)" name="Byte_Reg">
-      <a name="label" val="R_5"/>
-    </comp>
-    <comp loc="(310,360)" name="Byte_Reg">
-      <a name="label" val="R_9"/>
-    </comp>
-    <comp loc="(430,240)" name="Byte_Reg">
-      <a name="label" val="R_6"/>
-    </comp>
-    <comp loc="(310,120)" name="Byte_Reg">
-      <a name="label" val="R_1"/>
-    </comp>
-    <comp lib="0" loc="(280,550)" name="Power"/>
-    <comp lib="4" loc="(1010,410)" name="D Flip-Flop"/>
-    <comp loc="(550,240)" name="Byte_Reg">
-      <a name="label" val="R_7"/>
-    </comp>
-    <comp loc="(310,480)" name="Byte_Reg">
-      <a name="label" val="R_13"/>
-    </comp>
-    <comp loc="(550,480)" name="Byte_Reg">
-      <a name="label" val="R_15"/>
+    <comp lib="0" loc="(150,630)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="label" val="Data_in"/>
     </comp>
     <comp loc="(190,360)" name="Byte_Reg">
       <a name="label" val="R_8"/>
     </comp>
-    <comp lib="4" loc="(850,410)" name="D Flip-Flop"/>
-    <comp lib="8" loc="(932,585)" name="Text"/>
-    <comp lib="0" loc="(820,370)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="4"/>
+    <comp lib="4" loc="(770,410)" name="D Flip-Flop"/>
+    <comp loc="(550,480)" name="Byte_Reg">
+      <a name="label" val="R_15"/>
     </comp>
+    <comp loc="(310,240)" name="Byte_Reg">
+      <a name="label" val="R_5"/>
+    </comp>
+    <comp lib="0" loc="(170,570)" name="Probe"/>
+    <comp lib="1" loc="(750,300)" name="Controlled Buffer"/>
+    <comp lib="0" loc="(80,20)" name="Pin">
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="4" loc="(850,410)" name="D Flip-Flop"/>
+    <comp loc="(550,360)" name="Byte_Reg">
+      <a name="label" val="R_11"/>
+    </comp>
+    <comp loc="(310,360)" name="Byte_Reg">
+      <a name="label" val="R_9"/>
+    </comp>
+    <comp loc="(550,240)" name="Byte_Reg">
+      <a name="label" val="R_7"/>
+    </comp>
+    <comp lib="4" loc="(760,250)" name="D Flip-Flop"/>
     <comp loc="(430,480)" name="Byte_Reg">
       <a name="label" val="R_14"/>
     </comp>
-    <comp loc="(550,120)" name="Byte_Reg">
-      <a name="label" val="R_3"/>
+    <comp lib="2" loc="(400,620)" name="Demultiplexer">
+      <a name="selloc" val="tr"/>
+      <a name="width" val="8"/>
+      <a name="enable" val="false"/>
     </comp>
-    <comp loc="(430,360)" name="Byte_Reg">
-      <a name="label" val="R_10"/>
+    <comp lib="0" loc="(480,630)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="Data_out"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(380,680)" name="Probe"/>
+    <comp loc="(430,240)" name="Byte_Reg">
+      <a name="label" val="R_6"/>
     </comp>
     <comp lib="2" loc="(690,320)" name="Decoder">
       <a name="facing" val="west"/>
       <a name="select" val="4"/>
     </comp>
-    <comp lib="0" loc="(390,620)" name="Power"/>
-    <comp lib="0" loc="(740,250)" name="Pin">
+    <comp lib="4" loc="(1010,410)" name="D Flip-Flop"/>
+    <comp lib="1" loc="(420,600)" name="NOT Gate">
       <a name="facing" val="south"/>
-      <a name="label" val="Mode"/>
-      <a name="labelloc" val="north"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(660,460)" name="XOR Gate">
+      <a name="facing" val="north"/>
+      <a name="size" val="30"/>
+    </comp>
+    <comp loc="(430,120)" name="Byte_Reg">
+      <a name="label" val="R_2"/>
+    </comp>
+    <comp loc="(310,120)" name="Byte_Reg">
+      <a name="label" val="R_1"/>
+    </comp>
+    <comp lib="0" loc="(280,580)" name="Power"/>
+    <comp lib="1" loc="(860,540)" name="NOT Gate">
+      <a name="facing" val="west"/>
+      <a name="size" val="20"/>
     </comp>
     <comp lib="0" loc="(820,360)" name="Pin">
       <a name="facing" val="south"/>
@@ -713,14 +926,7 @@ end TCL_Generic;&#13;
       <a name="label" val="Address"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="4" loc="(410,610)" name="T Flip-Flop"/>
-    <comp lib="0" loc="(480,590)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="Data_out"/>
-      <a name="labelloc" val="east"/>
-    </comp>
+    <comp lib="4" loc="(930,410)" name="D Flip-Flop"/>
   </circuit>
   <circuit name="Stalwart_CPU">
     <a name="circuit" val="Stalwart_CPU"/>
@@ -733,17 +939,17 @@ end TCL_Generic;&#13;
       <a name="label" val="MBR"/>
       <a name="labelloc" val="south"/>
     </comp>
+    <comp loc="(450,420)" name="ALU"/>
+    <comp loc="(210,200)" name="Byte_Reg">
+      <a name="label" val="MAR"/>
+      <a name="labelloc" val="south"/>
+    </comp>
     <comp loc="(210,520)" name="Byte_Reg">
       <a name="label" val="D1"/>
       <a name="labelloc" val="south"/>
     </comp>
     <comp loc="(210,410)" name="Byte_Reg">
       <a name="label" val="D0"/>
-      <a name="labelloc" val="south"/>
-    </comp>
-    <comp loc="(450,420)" name="ALU"/>
-    <comp loc="(210,200)" name="Byte_Reg">
-      <a name="label" val="MAR"/>
       <a name="labelloc" val="south"/>
     </comp>
   </circuit>
@@ -763,23 +969,14 @@ end TCL_Generic;&#13;
       <polyline fill="none" points="32,70 38,70" stroke="#000000" stroke-width="4"/>
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="43" y="75">L</text>
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="42" y="134">R</text>
-      <circ-port height="10" pin="270,310" width="10" x="105" y="95"/>
       <circ-port height="10" pin="270,230" width="10" x="65" y="135"/>
+      <circ-port height="10" pin="270,310" width="10" x="105" y="95"/>
       <circ-port height="8" pin="160,310" width="8" x="26" y="126"/>
       <circ-port height="8" pin="160,230" width="8" x="26" y="66"/>
       <circ-port height="8" pin="160,160" width="8" x="66" y="56"/>
       <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="end" x="98" y="104">A</text>
       <circ-anchor facing="east" height="6" width="6" x="107" y="97"/>
     </appear>
-    <comp lib="0" loc="(160,230)" name="Pin">
-      <a name="label" val="L"/>
-    </comp>
-    <comp lib="0" loc="(270,230)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Status"/>
-      <a name="labelloc" val="east"/>
-    </comp>
     <comp lib="0" loc="(160,160)" name="Pin">
       <a name="label" val="OPcode"/>
     </comp>
@@ -789,8 +986,17 @@ end TCL_Generic;&#13;
       <a name="label" val="A"/>
       <a name="labelloc" val="east"/>
     </comp>
+    <comp lib="0" loc="(160,230)" name="Pin">
+      <a name="label" val="L"/>
+    </comp>
     <comp lib="0" loc="(160,310)" name="Pin">
       <a name="label" val="R"/>
+    </comp>
+    <comp lib="0" loc="(270,230)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Status"/>
+      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
   <circuit name="Control_Unit">
@@ -820,10 +1026,10 @@ end TCL_Generic;&#13;
       <text fill="#ffffff" font-family="Dialog" font-size="14" font-weight="bold" text-anchor="middle" x="105" y="146">8-bit Register</text>
       <polyline fill="none" points="136,91 140,100" stroke="#000000"/>
       <circ-port height="8" pin="110,360" width="8" x="66" y="76"/>
-      <circ-port height="8" pin="110,200" width="8" x="136" y="76"/>
       <circ-port height="8" pin="110,330" width="8" x="96" y="76"/>
-      <circ-port height="10" pin="390,540" width="10" x="155" y="115"/>
       <circ-port height="8" pin="200,70" width="8" x="46" y="116"/>
+      <circ-port height="10" pin="390,540" width="10" x="155" y="115"/>
+      <circ-port height="8" pin="110,200" width="8" x="136" y="76"/>
       <polyline fill="none" points="140,100 144,90" stroke="#000000"/>
       <polyline fill="none" points="70,81 70,89" stroke="#000000" stroke-width="4"/>
       <polyline fill="none" points="100,81 100,89" stroke="#000000" stroke-width="4"/>
@@ -912,17 +1118,25 @@ end TCL_Generic;&#13;
     <wire from="(390,420)" to="(390,480)"/>
     <wire from="(470,380)" to="(470,440)"/>
     <wire from="(240,110)" to="(240,170)"/>
-    <comp lib="0" loc="(390,510)" name="Splitter">
-      <a name="facing" val="north"/>
+    <comp lib="0" loc="(200,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="I"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(200,90)" name="Splitter">
+      <a name="facing" val="south"/>
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
     </comp>
     <comp lib="1" loc="(140,200)" name="NOT Gate">
       <a name="size" val="20"/>
     </comp>
-    <comp lib="1" loc="(200,90)" name="Controlled Buffer">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
+    <comp lib="4" loc="(250,300)" name="D Flip-Flop">
+      <a name="label" val="R_6"/>
+    </comp>
+    <comp lib="0" loc="(110,360)" name="Pin">
+      <a name="label" val="Chip_Select"/>
     </comp>
     <comp lib="4" loc="(410,370)" name="D Flip-Flop">
       <a name="label" val="R_3"/>
@@ -934,17 +1148,25 @@ end TCL_Generic;&#13;
       <a name="facing" val="south"/>
       <a name="width" val="8"/>
     </comp>
-    <comp lib="0" loc="(200,70)" name="Pin">
+    <comp lib="1" loc="(180,380)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="negate1" val="true"/>
+    </comp>
+    <comp lib="4" loc="(410,300)" name="D Flip-Flop">
+      <a name="label" val="R_2"/>
+    </comp>
+    <comp lib="4" loc="(250,370)" name="D Flip-Flop">
+      <a name="label" val="R_7"/>
+    </comp>
+    <comp lib="0" loc="(110,330)" name="Pin">
+      <a name="label" val="Mode_RW"/>
+    </comp>
+    <comp lib="0" loc="(110,200)" name="Pin">
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="1" loc="(200,90)" name="Controlled Buffer">
       <a name="facing" val="south"/>
       <a name="width" val="8"/>
-      <a name="label" val="I"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="1" loc="(180,340)" name="AND Gate">
-      <a name="size" val="30"/>
-    </comp>
-    <comp lib="4" loc="(250,160)" name="D Flip-Flop">
-      <a name="label" val="R_4"/>
     </comp>
     <comp lib="0" loc="(390,540)" name="Pin">
       <a name="facing" val="north"/>
@@ -953,41 +1175,153 @@ end TCL_Generic;&#13;
       <a name="label" val="O"/>
       <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="0" loc="(200,90)" name="Splitter">
-      <a name="facing" val="south"/>
+    <comp lib="0" loc="(390,510)" name="Splitter">
+      <a name="facing" val="north"/>
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="4" loc="(250,160)" name="D Flip-Flop">
+      <a name="label" val="R_4"/>
     </comp>
     <comp lib="4" loc="(410,230)" name="D Flip-Flop">
       <a name="label" val="R_1"/>
     </comp>
+    <comp lib="1" loc="(170,200)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
     <comp lib="4" loc="(250,230)" name="D Flip-Flop">
       <a name="label" val="R_5"/>
     </comp>
-    <comp lib="1" loc="(180,380)" name="AND Gate">
+    <comp lib="1" loc="(180,340)" name="AND Gate">
       <a name="size" val="30"/>
-      <a name="negate1" val="true"/>
     </comp>
-    <comp lib="0" loc="(110,200)" name="Pin">
-      <a name="label" val="Clock"/>
+  </circuit>
+  <circuit name="Nibble_Reg">
+    <a name="circuit" val="Nibble_Reg"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="circuitnamedbox" val="true"/>
+    <a name="circuitvhdlpath" val=""/>
+    <appear>
+      <rect fill="#ffffff" height="60" stroke="#000000" stroke-width="2" width="90" x="60" y="90"/>
+      <rect height="20" stroke="none" width="90" x="60" y="130"/>
+      <polyline fill="none" points="100,81 100,89" stroke="#000000" stroke-width="4"/>
+      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="end" x="142" y="125">O</text>
+      <rect height="4" stroke="none" width="10" x="50" y="118"/>
+      <rect height="4" stroke="none" width="10" x="150" y="118"/>
+      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="68" y="125">I</text>
+      <polyline fill="none" points="136,91 140,100" stroke="#000000"/>
+      <polyline fill="none" points="140,81 140,89" stroke="#000000" stroke-width="4"/>
+      <text fill="#ffffff" font-family="Dialog" font-size="14" font-weight="bold" text-anchor="middle" x="105" y="146">4-bit Register</text>
+      <polyline fill="none" points="140,100 144,90" stroke="#000000"/>
+      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="63" y="102">CS</text>
+      <text fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="91" y="102">RW</text>
+      <polyline fill="none" points="70,81 70,89" stroke="#000000" stroke-width="4"/>
+      <circ-port height="10" pin="360,540" width="10" x="155" y="115"/>
+      <circ-port height="8" pin="120,360" width="8" x="66" y="76"/>
+      <circ-port height="8" pin="120,330" width="8" x="96" y="76"/>
+      <circ-port height="8" pin="120,200" width="8" x="136" y="76"/>
+      <circ-port height="8" pin="210,70" width="8" x="46" y="116"/>
+      <circ-anchor facing="east" height="6" width="6" x="157" y="117"/>
+    </appear>
+    <wire from="(210,280)" to="(210,350)"/>
+    <wire from="(200,80)" to="(200,340)"/>
+    <wire from="(150,350)" to="(150,360)"/>
+    <wire from="(200,380)" to="(200,520)"/>
+    <wire from="(210,280)" to="(250,280)"/>
+    <wire from="(210,420)" to="(250,420)"/>
+    <wire from="(180,200)" to="(210,200)"/>
+    <wire from="(120,360)" to="(150,360)"/>
+    <wire from="(220,380)" to="(250,380)"/>
+    <wire from="(200,520)" to="(350,520)"/>
+    <wire from="(120,330)" to="(140,330)"/>
+    <wire from="(140,330)" to="(160,330)"/>
+    <wire from="(330,310)" to="(330,490)"/>
+    <wire from="(150,370)" to="(160,370)"/>
+    <wire from="(150,350)" to="(160,350)"/>
+    <wire from="(240,240)" to="(250,240)"/>
+    <wire from="(120,200)" to="(130,200)"/>
+    <wire from="(250,110)" to="(250,170)"/>
+    <wire from="(240,110)" to="(240,240)"/>
+    <wire from="(210,210)" to="(210,280)"/>
+    <wire from="(210,350)" to="(210,420)"/>
+    <wire from="(350,170)" to="(350,490)"/>
+    <wire from="(150,360)" to="(150,370)"/>
+    <wire from="(210,200)" to="(210,210)"/>
+    <wire from="(230,110)" to="(230,310)"/>
+    <wire from="(220,110)" to="(220,380)"/>
+    <wire from="(360,530)" to="(360,540)"/>
+    <wire from="(210,210)" to="(250,210)"/>
+    <wire from="(210,350)" to="(250,350)"/>
+    <wire from="(310,170)" to="(350,170)"/>
+    <wire from="(310,240)" to="(340,240)"/>
+    <wire from="(310,310)" to="(330,310)"/>
+    <wire from="(320,380)" to="(320,490)"/>
+    <wire from="(230,310)" to="(250,310)"/>
+    <wire from="(310,380)" to="(320,380)"/>
+    <wire from="(140,390)" to="(150,390)"/>
+    <wire from="(150,200)" to="(160,200)"/>
+    <wire from="(190,380)" to="(200,380)"/>
+    <wire from="(190,340)" to="(200,340)"/>
+    <wire from="(140,330)" to="(140,390)"/>
+    <wire from="(340,240)" to="(340,490)"/>
+    <comp lib="1" loc="(150,200)" name="NOT Gate">
+      <a name="size" val="20"/>
     </comp>
-    <comp lib="4" loc="(410,300)" name="D Flip-Flop">
-      <a name="label" val="R_2"/>
+    <comp lib="1" loc="(210,90)" name="Controlled Buffer">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(110,330)" name="Pin">
-      <a name="label" val="Mode_RW"/>
+    <comp lib="1" loc="(180,200)" name="NOT Gate">
+      <a name="size" val="20"/>
     </comp>
-    <comp lib="4" loc="(250,370)" name="D Flip-Flop">
-      <a name="label" val="R_7"/>
+    <comp lib="0" loc="(360,510)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
     </comp>
-    <comp lib="4" loc="(250,300)" name="D Flip-Flop">
-      <a name="label" val="R_6"/>
+    <comp lib="4" loc="(260,160)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(210,70)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="label" val="I"/>
+      <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="0" loc="(110,360)" name="Pin">
+    <comp lib="0" loc="(120,360)" name="Pin">
       <a name="label" val="Chip_Select"/>
     </comp>
-    <comp lib="1" loc="(170,200)" name="NOT Gate">
-      <a name="size" val="20"/>
+    <comp lib="0" loc="(120,200)" name="Pin">
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="4" loc="(260,300)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(120,330)" name="Pin">
+      <a name="label" val="Mode_RW"/>
+    </comp>
+    <comp lib="4" loc="(260,370)" name="D Flip-Flop"/>
+    <comp lib="4" loc="(260,230)" name="D Flip-Flop"/>
+    <comp lib="0" loc="(210,90)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="1" loc="(190,340)" name="AND Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(360,530)" name="Controlled Buffer">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(360,540)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="O"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="1" loc="(190,380)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="negate1" val="true"/>
     </comp>
   </circuit>
 </project>
