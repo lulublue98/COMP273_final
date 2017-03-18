@@ -26,3 +26,9 @@ Ivan, March 11:
 
   -------------------
   Sum: 25, 12 of which require to fit 4-bit address -> 4-bit OP-code
+
+Ivan, March 18:
+
+  As explained in a lecture on control units, we're going to use the first two bits of op-codes to carry the information of "addressed instruction".
+  Luckily, the plan already uses that already: the first two bits being 00 are the only ones not using addresses.
+  However, whoever designs the ALU should consider changing the code/order of things for direct commands, perhaps use the ALU func code at the end as in lecture.
