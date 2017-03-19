@@ -24,8 +24,9 @@ Ivan, March 11:
   
   STOP: 00000000
 
-  -------------------
   Sum: 25, 12 of which require to fit 4-bit address -> 4-bit OP-code
+
+-------------------
 
 Ivan, March 18:
 
