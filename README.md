@@ -40,13 +40,13 @@ Ivan, March 25:
   
   CU steps:
   BEQ: 
-    R1 to L; R2 to R; ALU Sub EXEC; IC = Zero ? A : IC + 1
+    R1 to L; R2 to R; ALU Sub EXEC; if Zero rewrite A
   BNQ:
-    R1 to L; R2 to R; ALU Sub EXEC; IC = Zero ? IC + 1 : A
+    R1 to L; R2 to R; ALU Sub EXEC; if !Zero rewrite A
   LD:
-    Send to RAM (Read at A); EXEC RAM; D to R; IC ++
+    Send to RAM (Read at A); EXEC RAM; D to R
   STR:
-    Send to RAM (Write R at A); IC ++
+    Send to RAM (Write R at A)
   ADD:
     R1 to L; R2 to R; ALU Add EXEC; D to R1
   SUB:
@@ -57,3 +57,10 @@ Ivan, March 25:
     IN to R (IE as control)
   STOP:
     ??
+
+  Before each:
+    1: IC to MAR
+    2: Send to RAM (Read at MAR)
+    3: Exec RAM (and INC IC)
+    4: RAM D to MBR
+    5: MBR to IR
