@@ -40,17 +40,17 @@ Ivan, March 25:
   
   CU steps:
   BEQ: 
-    R1 to L; R2 to R; ALU Sub EXEC; if Zero rewrite A
+    R2 to L; R1 to R; ALU Sub EXEC; if Zero rewrite A
   BNQ:
-    R1 to L; R2 to R; ALU Sub EXEC; if !Zero rewrite A
+    R2 to L; R1 to R; ALU Sub EXEC; if !Zero rewrite A
   LD:
     Send to RAM (Read at A); EXEC RAM; D to R
   STR:
     Send to RAM (Write R at A)
   ADD:
-    R1 to L; R2 to R; ALU Add EXEC; D to R1
+    R2 to L; R1 to R; ALU Add EXEC; D to R1
   SUB:
-    R1 to L; R2 to R; ALU Sub EXEC; D to R1
+    R2 to L; R1 to R; ALU Sub EXEC; D to R1
   PRT:
     Send to OUT (Enabled, R)
   INP:
@@ -64,3 +64,5 @@ Ivan, March 25:
     3: Exec RAM (and INC IC)
     4: RAM D to MBR
     5: MBR to IR
+
+  Swapped R2 and R1 in all instructions due to 2s comp on L not on R
