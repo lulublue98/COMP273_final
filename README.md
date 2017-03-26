@@ -33,3 +33,27 @@ Ivan, March 18:
   As explained in a lecture on control units, we're going to use the first two bits of op-codes to carry the information of "addressed instruction".
   Luckily, the plan already uses that already: the first two bits being 00 are the only ones not using addresses.
   However, whoever designs the ALU should consider changing the code/order of things for direct commands, perhaps use the ALU func code at the end as in lecture.
+
+-------------------
+
+Ivan, March 25:
+  
+  CU steps:
+  BEQ: 
+    R1 to L; R2 to R; ALU Sub EXEC; IC = Zero ? A : IC + 1
+  BNQ:
+    R1 to L; R2 to R; ALU Sub EXEC; IC = Zero ? IC + 1 : A
+  LD:
+    Send to RAM (Read at A); EXEC RAM; D to R; IC ++
+  STR:
+    Send to RAM (Write R at A); IC ++
+  ADD:
+    R1 to L; R2 to R; ALU Add EXEC; D to R1
+  SUB:
+    R1 to L; R2 to R; ALU Sub EXEC; D to R1
+  PRT:
+    Send to OUT (Enabled, R)
+  INP:
+    IN to R (IE as control)
+  STOP:
+    ??
